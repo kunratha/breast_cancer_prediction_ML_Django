@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<div class="container" style="width: 500px; background-color: bisque; border-radius: 5px;">
+    <h2 style="text-align: center; padding-top: 20px; padding-bottom: 20px;">Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_username">Username:</label>
+            <input type="text" name="username" class="form-control" required id="id_username">
+        </div>
+        <div class="mb-3">
+            <label for="id_password">Password:</label>
+            <input type="password" name="password" class="form-control" required id="id_password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <p style="margin-top: 20px; padding-bottom: 20px;">Don't have an account? <a href="{% url 'register' %}">Register
+            here</a>.</p>
+</div>
+{% endblock %}

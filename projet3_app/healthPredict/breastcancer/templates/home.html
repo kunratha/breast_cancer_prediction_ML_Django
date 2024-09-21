@@ -1,0 +1,168 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Link to the renamed home.css file -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+    <div class="d-flex flex-column min-vh-100">
+        <div class="hero flex-grow-1">
+            <!-- The video background-->
+            <video autoplay muted loop plays-inline class="bac-video">
+                <source src="{% static '/videos/vecteezy_breast-cancer.mp4' %}" type="video/mp4">
+            </video>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg fixed-top" style="font-size: 19px;">
+                <div class="container-fluid">
+                    <h2 style="color: white; text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">HEALTH-PREDICT</h2>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: black;" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: black;" href="{% url 'about' %}">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: black;" href="{% url 'services' %}">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: black;" href="{% url 'contact' %}">Contact</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto">
+                            {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" style="width: 100px; text-align: center; color: white; background-color: #FF8C00; border-radius: 25px;
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 11px;"
+                                    href="{% url 'login' %}">Login
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main style="width: 100%; padding: 80px 0 0 0; margin: 0;">
+                <!-- Buttons Container -->
+                <div class="text-container">
+                    <p>
+                        Breast cancer is one of the most common cancers among women worldwide. Early detection and
+                        accurate
+                        diagnosis are crucial for effective treatment and improved survival rates. Our platform
+                        leverages
+                        advanced machine learning algorithms to predict breast cancer based on various medical
+                        parameters.
+                        By analyzing patterns and correlations in the data, we aim to provide healthcare professionals
+                        with
+                        valuable insights to support their decision-making process.
+                    </p>
+                </div>
+                <div class="button-container">
+                    <a class="btn btn-primary" style="border-radius: 25px;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 11px;"
+                        href="{% url 'predict' %}">Prediction</a>
+                </div>
+
+
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-success text-center text-lg-start mt-auto">
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">About Us</h5>
+                        <p>
+                            Some representative placeholder content for the three columns of text below the carousel.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Useful Links</h5>
+                        <ul class="list-unstyled mb-0 text-light">
+                            <li>
+                                <a href="{% url 'home' %}" class="text-dark">Home</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'about' %}" class="text-dark">About</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'services' %}" class="text-dark">Services</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'contact' %}" class="text-dark">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Contact Us</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="mailto:info@mysite.com" class="text-dark">Email: info@mysite.com</a>
+                            </li>
+                            <li>
+                                <a href="tel:+1234567890" class="text-dark">Phone: +123 456 7890</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-dark">Address: 123 Street, City, Country</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2024 MySite. All rights reserved.
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz4fnFO9gybAuj1xHhlRX5Mf5w8dQ05bqj5dQ0RSKli8ztZ3yoUgho0AI4"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"
+            integrity="sha384-cn7l7gDp0eyAnH/PrnYHiZo7ANwMeZz7eKGI/2tE2hi2z4KN1jR+XBw5z7MSrz4T"
+            crossorigin="anonymous"></script>
+        <script>
+            window.addEventListener('scroll', function () {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-scroll');
+                } else {
+                    navbar.classList.remove('navbar-scroll');
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+{% extends "master.html" %}
+
+{% block title %}
+Contact Info
+{% endblock %}
+
+{% block content %}
+
+<div class="container" style="background-color: bisque; width: 800px; border-radius: 5px; font-size: 19px;">
+    <div class="text-center" style="padding-top: 20px; padding-bottom: 20px;">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Here's how you can reach us...</p>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card border-0">
+                <div class="card-body" style="background-color: bisque;">
+                    <h5 class="card-title">Address</h5>
+                    <p class="card-text">1234 Street Name<br>City, State, ZIP</p>
+                    <h5 class="card-title">Phone</h5>
+                    <p class="card-text">+1 (234) 567-890</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <form action="{}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="firstname" placeholder="Your name..">
+                </div>
+                <div class="mb-3">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lastname" placeholder="Your last name..">
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <select id="country" class="form-select" name="country">
+                        <option value="usa">Cambodia</option>
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                        <option value="usa">France</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <textarea id="subject" class="form-control" name="subject" placeholder="Write something.."
+                        style="height:170px"></textarea>
+                </div>
+                <button style="border-radius: 25px;" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-title {
+        margin-bottom: 10px;
+    }
+</style>
+
+{% endblock %}

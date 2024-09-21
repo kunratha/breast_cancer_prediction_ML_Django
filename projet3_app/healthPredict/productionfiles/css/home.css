@@ -1,0 +1,50 @@
+/* static/css/home.css */
+
+.bac-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .bac-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .bac-video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.button-container {
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
+
+.text-container {
+    margin-top: 5%;
+    margin-left: 20px;
+    margin-right: 60%;
+    color: black;
+    font-size: 21px;
+    text-shadow: 2px 2px 5px rgba(32, 147, 32, 0.7);
+}
+
+.navbar-scroll {
+    background-color: rgba(246, 228, 88, 0.95) !important;
+    transition: background-color 0.3s;
+}
+
+#navbarNav ul li a:hover {
+    background-color: rgb(238, 193, 12);
+    border-radius: 5px;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
