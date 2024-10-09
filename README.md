@@ -85,7 +85,6 @@ To start the Django development server, run:
 The prediction model was trained using the Wisconsin Breast Cancer Dataset, and integrated into the Django app for predictions. The model might be trained using algorithms such as:
 
 **Support Vector Machine (SVM)**
-
 The model takes several input features, including:
 Radius Mean
 Texture Mean
