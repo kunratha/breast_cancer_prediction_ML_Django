@@ -5,7 +5,7 @@ This project is a **breast cancer prediction system** built using **Machine Lear
 ## **Features**
 
 - **Django Web Framework**: Built with Django to provide a clean, user-friendly interface.
-- **Machine Learning**: Uses a trained machine learning model to predict breast cancer (e.g., **Logistic Regression**, **Random Forest**, or **SVM**).
+- **Machine Learning**: Uses a trained machine learning model to predict breast cancer (**SVM**).
 - **User Input Form**: Allows users to input medical features manually.
 - **Prediction Result**: Displays whether the tumor is predicted to be malignant or benign.
 - **Bootstrap Integrated**: Front-end styled using Bootstrap for responsive design.
@@ -45,7 +45,8 @@ First, clone the project repository from GitHub:
 
 ```bash
 git clone https://github.com/kunratha/breast-cancer_prediction_ML_Django.git
-cd breast-cancer_prediction_ML_Django
+cd breast-cancer_prediction_ML_Django 
+```
 
 ### 2. **Create and Activate Virtual Environment (optional)**
 
@@ -53,7 +54,7 @@ It's recommended to use a virtual environment to manage your dependencies. You c
 python -m venv env
 source env/bin/activate  # For Windows: env\Scripts\activate
 
-3. Install Dependencies
+### 3. **Install Dependencies**
 
 Install the required Python libraries by running:
 pip install -r requirements.txt
@@ -64,17 +65,18 @@ scikit-learn
 pandas
 numpy
 
-4. Run Migrations
+### 4. **Run Migrations**
 
 Apply the Django migrations to set up the database:
 python manage.py migrate
 
-5. Run the Development Server
+### 5. **Run the Development Server**
 
 To start the Django development server, run:
-python manage.py runserver
 
-Visit http://127.0.0.1:8000/ in your browser to view the application.
+**python manage.py runserver**
+
+**Visit http://127.0.0.1:8000/ in your browser to view the application.**
 
 How It Works
 
@@ -86,10 +88,7 @@ Machine Learning Model
 
 The prediction model was trained using the Wisconsin Breast Cancer Dataset, and integrated into the Django app for predictions. The model might be trained using algorithms such as:
 
-    Logistic Regression
-    Random Forest
-    Support Vector Machine (SVM)
-    Decision Tree
+**Support Vector Machine (SVM)**
 
 The model takes several input features, including:
 
@@ -100,6 +99,7 @@ The model takes several input features, including:
     Smoothness Mean
     Concavity Mean
     Symmetry Mean
+    etc.
 
 Dataset
 
