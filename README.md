@@ -66,60 +66,53 @@ pandas
 numpy
 
 ### 4. **Run Migrations**
-
 Apply the Django migrations to set up the database:
 python manage.py migrate
 
 ### 5. **Run the Development Server**
-
 To start the Django development server, run:
 
 **python manage.py runserver**
 
 **Visit http://127.0.0.1:8000/ in your browser to view the application.**
 
-How It Works
+**How It Works**
+**Input Features:** The user enters tumor-related medical features like radius, texture, and perimeter.
+**Prediction:** The system feeds the input into a pre-trained machine learning model, which returns a prediction of either malignant or benign.
+**Result Display:** The result is shown to the user in a modal, providing an easy-to-understand interpretation of the prediction.
 
-    Input Features: The user enters tumor-related medical features like radius, texture, and perimeter.
-    Prediction: The system feeds the input into a pre-trained machine learning model, which returns a prediction of either malignant or benign.
-    Result Display: The result is shown to the user in a modal, providing an easy-to-understand interpretation of the prediction.
-
-Machine Learning Model
-
+**Machine Learning Model**
 The prediction model was trained using the Wisconsin Breast Cancer Dataset, and integrated into the Django app for predictions. The model might be trained using algorithms such as:
 
 **Support Vector Machine (SVM)**
 
 The model takes several input features, including:
+Radius Mean
+Texture Mean
+Perimeter Mean
+Area Mean
+Smoothness Mean
+Concavity Mean
+Symmetry Mean
+etc.
 
-    Radius Mean
-    Texture Mean
-    Perimeter Mean
-    Area Mean
-    Smoothness Mean
-    Concavity Mean
-    Symmetry Mean
-    etc.
-
-Dataset
-
+**Dataset**
 The dataset used for training the model is sourced from the UCI Machine Learning Repository.
 Contributing
 
-Contributions are welcome! If you have any suggestions or improvements, feel free to fork the repository, create a new branch, and submit a pull request.
-
-    Fork the repo
+**Contributions are welcome!**
+If you have any suggestions or improvements, feel free to fork the repository, create a new branch, and submit a pull request.
+    **Fork the repo**
     Create a new branch (git checkout -b feature-branch)
-    Make your changes
-    Commit your changes (git commit -m 'Add feature')
-    Push to the branch (git push origin feature-branch)
-    Open a pull request
+    **Make your changes**
+    **Commit your changes** (git commit -m 'Add feature')
+    **Push to the branch** (git push origin feature-branch)
+    **Open a pull request**
 
-License
-
+**License**
 This project is licensed under the MIT License.
-Contact
 
+**Contact**
 For any inquiries or feedback, feel free to reach out:
 
     GitHub: kunratha
